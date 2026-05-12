@@ -3,8 +3,14 @@
 <head>
   <title>Manan360.pk</title>
 </head>
-<body>
+
+<body style="text-align:center; font-family:Arial; background:#f2f2f2;">
+
   <h1>Welcome to Manan360.pk</h1>
-  <p>My First Website</p>
+
+  <p>Notes, Education & Technology Platform</p>
+
+  <img src="logo.png" width="200">
+
 </body>
 </html>
