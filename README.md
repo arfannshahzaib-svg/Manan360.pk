@@ -5,4 +5,4 @@ This website is created to provide notes, PDFs, study materials, and useful educ
 
 Thank you for visiting and happy learning! 📘
 <p><a href="Class%209th%20Urdu%20Test%20Paper%20Ch%231.pdf">📘 Download Urdu Test Paper class 9th Chapter 1</a></p>
-<p><a href="Class%209th%20Urdu%20Test%20Paper%20Ch%231.pdf">📘 Download Physics Test Paper class 10th Chapter 1</a></p>
+<p><a href="Class%2010th%20physics%20Test%20Paper%20Ch%231.pdf">📘 Download Physics Test Paper class 10th Chapter 1</a></p>
