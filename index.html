@@ -7,75 +7,110 @@
 
 <style>
 
-body{
-margin:0;
-padding:0;
-font-family:Arial;
-background:#f2f2f2;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+/* HEADER */
+
 header{
-background:#0b57d0;
-color:white;
-text-align:center;
-padding:30px;
+    background:linear-gradient(135deg,#0b57d0,#003b99);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1{
-margin:0;
-font-size:38px;
+    font-size:42px;
+    margin-bottom:10px;
 }
 
 header p{
-margin-top:10px;
-font-size:18px;
+    font-size:18px;
 }
+
+/* CLASS TITLE */
 
 .class-title{
-text-align:center;
-margin-top:40px;
-color:#0b57d0;
-font-size:30px;
+    text-align:center;
+    margin-top:50px;
+    font-size:34px;
+    color:#0b57d0;
 }
+
+/* CARD CONTAINER */
 
 .container{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-padding:30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:40px 20px;
 }
 
+/* CARD */
+
 .card{
-background:white;
-width:260px;
-padding:25px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    background:white;
+    width:300px;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 .card h2{
-color:#0b57d0;
-margin-bottom:10px;
+    color:#0b57d0;
+    margin-bottom:15px;
+    font-size:30px;
 }
+
+.card p{
+    margin-bottom:20px;
+    color:#666;
+}
+
+/* BUTTONS */
 
 .btn{
-display:block;
-margin-top:15px;
-background:#0b57d0;
-color:white;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
+    display:block;
+    margin-top:12px;
+    padding:14px;
+    background:#0b57d0;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:16px;
+    transition:0.3s;
 }
 
+.btn:hover{
+    background:#003b99;
+}
+
+/* FOOTER */
+
 footer{
-background:#111;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
+    margin-top:50px;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:15px;
 }
 
 </style>
@@ -84,55 +119,54 @@ margin-top:40px;
 <body>
 
 <header>
-<h1>Manan360.pk</h1>
-<p>Notes & Test Papers</p>
+    <h1>Manan360.pk</h1>
+    <p>Professional Notes & Test Papers Portal</p>
 </header>
+
+<!-- CLASS 9 -->
 
 <h1 class="class-title">Class 9</h1>
 
 <div class="container">
 
-<div class="card">
-<h2>Urdu</h2>
+    <div class="card">
+        <h2>Urdu</h2>
+        <p>Chapter 1 Test Paper</p>
 
-<a href="Class%209th%20Urdu%20Test%20Paper%20Ch%231.pdf" target="_blank" class="btn">
-Open PDF
-</a>
+        <a href="urdu.pdf" target="_blank" class="btn">
+            Open PDF
+        </a>
 
-<a href="Class%209th%20Urdu%20Test%20Paper%20Ch%231.pdf" download class="btn">
-Download PDF
-</a>
+        <a href="urdu.pdf" download class="btn">
+            Download PDF
+        </a>
+    </div>
 
 </div>
 
-</div>
+<!-- CLASS 10 -->
 
 <h1 class="class-title">Class 10</h1>
 
 <div class="container">
 
-<div class="card">
-<h2>Physics</h2>
-<div class="card">
-<h2>Physics</h2>
+    <div class="card">
+        <h2>Physics</h2>
+        <p>Chapter 1 Test Paper</p>
 
-<a href="Class%2010th%20Physics%20Test%20Paper%20Ch%231.pdf" target="_blank" class="btn">
-Open PDF
-</a>
+        <a href="physics.pdf" target="_blank" class="btn">
+            Open PDF
+        </a>
 
-<a href="Class%2010th%20Physics%20Test%20Paper%20Ch%231.pdf" download class="btn">
-Download PDF
-</a>
-
-</div>
-</a>
-
-</div>
+        <a href="physics.pdf" download class="btn">
+            Download PDF
+        </a>
+    </div>
 
 </div>
 
 <footer>
-© 2026 Manan360.pk
+    © 2026 Manan360.pk | All Rights Reserved
 </footer>
 
 </body>
