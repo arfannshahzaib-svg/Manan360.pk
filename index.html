@@ -1,37 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manan360.pk</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#f3f3f3;
+}
+
+/* HEADER */
+
+header{
+    background:#0b57d0;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:38px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* CARDS */
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:50px 20px;
+}
+
+.card{
+    background:white;
+    width:260px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    text-decoration:none;
+    color:black;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card h2{
+    color:#0b57d0;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.card p{
+    color:#555;
+    font-size:17px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+</style>
 </head>
 
-<body style="text-align:center; font-family:Arial;">
+<body>
 
-<h1>Welcome to Manan360.pk</h1>
+<header>
+    <h1>Manan360.pk</h1>
+    <p>Notes & Test Papers</p>
+</header>
 
-<img src="logo.png" width="250">
+<div class="container">
 
-<hr>
+    <!-- URDU CARD -->
 
-<h2>Class 9</h2>
+    <a href="urdu.pdf" target="_blank" class="card">
+        <h2>Urdu</h2>
+        <p>Open Paper</p>
+    </a>
 
-<h3>Test Paper</h3>
+    <!-- PHYSICS CARD -->
 
-<br><br>
+    <a href="physics.pdf" target="_blank" class="card">
+        <h2>Physics</h2>
+        <p>Open Paper</p>
+    </a>
 
-<h3>Test Papers</h3>
-<a href="Class 9th Urdu Test Paper Ch#1.pdf">
-<button>Urdu Test Paper</button>
-</a>
+</div>
 
-<hr>
-
-<h2>Class 10</h2>
-
-<h3>Test Papers</h3>
-
-<a href="physics-test-paper.pdf.pdf">
-<button>Physics Test Paper</button>
-</a>
+<footer>
+    © 2026 Manan360.pk
+</footer>
 
 </body>
 </html>
+
