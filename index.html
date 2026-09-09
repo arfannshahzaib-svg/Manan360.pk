@@ -1,8 +1,40 @@
-<script>
-if (sessionStorage.getItem("manan360_login") !== "yes") {
-  location.href = "login.html";
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manan360 Login</title>
+</head>
+<body>
+
+  <h2>Manan360 Login</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <br><br>
+
+  <input type="password" id="password" placeholder="Password">
+  <br><br>
+
+  <button onclick="login()">Login</button>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "Manan360" && password === "1098765492") {
+        sessionStorage.setItem("manan360_login", "yes");
+        window.location.href = "index.html";
+      } else {
+        alert("Username یا Password غلط ہے");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+یہ صرف "login.html" میں لگانا ہے۔ "index.html" والا چھوٹا code اپنی جگہ رہنے دیں۔
 <!DOCTYPE html>
 <html lang="en">
 <head>
