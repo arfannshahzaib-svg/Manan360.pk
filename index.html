@@ -1,82 +1,4 @@
-<!DOCTYPE html>
-<html lang="ur">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manan360.pk</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-    }
-
-    #loginPage {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .login-box {
-      background: white;
-      padding: 30px;
-      width: 300px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.2);
-    }
-
-    .login-box input {
-      width: 90%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .login-box button {
-      width: 98%;
-      padding: 12px;
-      margin-top: 10px;
-      border: 0;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    #error {
-      color: red;
-    }
-
-    #website {
-      display: none;
-      padding: 25px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- LOGIN PAGE -->
-  <div id="loginPage">
-    <div class="login-box">
-      <h2>Manan360.pk</h2>
-
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-
-      <button onclick="login()">Login</button>
-
-      <p id="error"></p>
-    </div>
-  </div>
-
-
-  <!-- WEBSITE -->
-  <div id="website">
-
-    <h1>Welcome to Manan360.pk</h1>
+>Welcome to Manan360.pk</h1>
 
     <!-- یہاں اپنی اصل Website کا content رکھیں -->
 
@@ -101,21 +23,12 @@
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
-      if (username === USERNAME && password === PASSWORD) {
-
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("website").style.display = "block";
-
-      } else {
-
+      
         document.getElementById("error").textContent =
           "Username یا Password غلط ہے۔";
       }
     }
-  </script>
-
-</body>
-</html>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
