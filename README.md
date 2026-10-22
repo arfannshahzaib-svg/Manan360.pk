@@ -1,17 +1,26 @@
-# Manan360.pk
-Welcome Students 🌟
+Govt. Elementary School 104 ML
 
-This website is created to provide notes, PDFs, study materials, and useful educational resources for all students.
+Welcome to the official website of Govt. Elementary School 104 ML.
 
-Thank you for visiting and happy learning! 📘
-<p><a href="Class%209th%20Urdu%20Test%20Paper%20Ch%231.pdf">📘 Download Urdu Test Paper class 9th Chapter 1</a></p>
-<h1>Class 10th Physics Test Papers</h1>
+Website Features
 
-<a href="physics-test-paper.pdf.pdf" download 
-style="background:#2563eb;color:white;padding:12px 20px;
-text-decoration:none;border-radius:8px;display:inline-block;">
-  Class 10th Physics Chapter 1 Test Paper Download
-</a>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+- First Term Results
+- Classes 1 to 8
+- Student Results by Roll Number
+- Subject-wise Marks
+- Total Marks and Percentage
+- Student Position
+- Print and Save Results as PDF
+- Mobile-Friendly Design
+
+Hosting
+
+Hosted free using GitHub Pages.
+
+Technology
+
+- HTML
+- CSS
+- JavaScript
+
+© 2026 Govt. Elementary School 104 ML. All rights reserved.
