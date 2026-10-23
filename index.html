@@ -1,337 +1,171 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manan360.pk | Student Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>School Result Portal</title>
 <style>
-:root{--navy:#082b55;--blue:#087cf0;--green:#08bd79;--bg:#f3f7fc}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#17345b}
-button,input,select{font:inherit}
-button{cursor:pointer}
-header{background:linear-gradient(120deg,#062b59,#087cf0,#08bd79);color:white;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-size:25px;font-weight:800}.logo span{color:#66f4bd}
-header small{display:block;font-size:12px;margin-top:5px}
-.wrap{max-width:1100px;margin:auto;padding:20px}
-.card{background:white;border:1px solid #e1eaf5;border-radius:15px;padding:20px;margin-bottom:16px;box-shadow:0 5px 18px #17345b0a}
-h1{font-size:25px;margin:0 0 8px}h2{font-size:20px;margin-top:0}h3{font-size:16px}
-.muted{color:#7185a0;font-size:13px;line-height:1.6}
-input,select{width:100%;padding:12px;border:1px solid #d7e3f3;border-radius:9px;margin:6px 0 14px;background:#fbfdff}
-label{font-size:13px;font-weight:bold}
-.btn{border:0;border-radius:9px;padding:12px 16px;color:white;background:linear-gradient(100deg,#087cf0,#08bd79);font-weight:bold}
-.btn.secondary{background:#eaf3ff;color:#1263b7}
-.btn.danger{background:#e84455}
-.btn.full{width:100%}
-.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.stat{font-size:13px;color:#7185a0}.num{font-size:27px;font-weight:bold;margin-top:9px}
-.blue{color:#087cf0}.green{color:#079b63}.red{color:#e43d51}.orange{color:#e58b00}
-.navs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
-.nav{border:0;border-radius:8px;padding:10px 12px;background:#e8f0fa;color:#153d69}
-.nav.active,.nav:hover{background:linear-gradient(100deg,#087cf0,#08bd79);color:white}
-.page{display:none}.page.active{display:block}
-.action{width:100%;padding:17px;text-align:left;background:white;border:1px solid #e0eaf7;border-radius:12px;color:#123761;font-weight:bold}
-.action small{display:block;color:#7b8ea9;font-weight:normal;margin-top:7px}
-.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-table{border-collapse:collapse;width:100%;min-width:500px;font-size:13px}
-th,td{text-align:left;padding:12px 9px;border-bottom:1px solid #e9eff7}
-th{background:#f7faff;color:#6d819b}
-.tablewrap{overflow-x:auto}
-.badge{display:inline-block;padding:6px 10px;border-radius:20px;font-size:11px;font-weight:bold}
-.Pending{background:#fff2d7;color:#a76b00}
-.Approved{background:#d9f8e8;color:#07814f}
-.Rejected{background:#ffe2e5;color:#cf2e43}
-.Forwarded{background:#e0edff;color:#1267ca}
-.question{font-size:18px;font-weight:bold;line-height:1.5}
-.option{display:block;padding:13px;margin:9px 0;border:1px solid #dce7f5;border-radius:9px;cursor:pointer}
-.option:has(input:checked){border-color:#087cf0;background:#edf6ff}
-.option input{width:auto;margin:0 8px 0 0}
-.timer{font-weight:bold;color:#e58b00}
-footer{text-align:center;padding:22px;color:#7285a0;font-size:12px}
-.hidden{display:none!important}
-@media(max-width:700px){
- .wrap{padding:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
- .row,.actions{grid-template-columns:1fr}
- header{padding:16px}.logo{font-size:22px}
- .card{padding:15px}
-}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f1e8;color:#173d2f}
+header{background:#0d3527;color:white;text-align:center;padding:30px 15px;border-bottom:5px solid #c6a34b}
+.logo{width:65px;height:65px;border:2px solid #c6a34b;border-radius:50%;margin:auto auto 15px;display:grid;place-items:center;background:white;color:#0d3527;font-size:27px}
+h1{font-family:Georgia,serif;font-size:clamp(24px,5vw,36px);font-weight:normal;line-height:1.3;margin:0 0 12px}
+header p{color:#e5ca78;letter-spacing:2px;font-size:13px;line-height:1.7}
+main{max-width:850px;margin:28px auto;padding:0 14px}
+.search,.result{background:white;border-radius:12px;border:1px solid #deded5;overflow:hidden}
+.search{padding:25px}
+h2{font-family:Georgia,serif;font-weight:normal}
+label{display:block;font-size:13px;letter-spacing:3px;margin:20px 0 10px}
+input{width:100%;padding:17px;border:2px solid #c6a34b;border-radius:9px;font-size:23px;text-align:center;letter-spacing:3px}
+button{background:#174b37;color:white;border:0;border-radius:8px;padding:16px;font-weight:bold;font-size:16px;cursor:pointer}
+.search button{width:100%;margin-top:14px}
+#message{color:#a33b36;font-weight:bold;margin-top:15px}
+.result{display:none;margin-top:25px;border:2px solid #c6a34b}
+.resulthead{background:#0d3527;color:white;text-align:center;padding:24px 12px}
+.resulthead h2{font-size:25px;line-height:1.4;margin:0 0 10px}
+.resulthead p{color:#e5ca78;letter-spacing:2px;font-size:12px;line-height:1.6}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:22px}
+.info small{display:block;color:#777;font-size:11px;letter-spacing:2px;margin-bottom:7px}
+.info strong{font-size:17px;overflow-wrap:anywhere}
+.tablewrap{overflow-x:auto;padding:0 12px 20px}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:13px}
+th{background:#174b37;color:white;padding:12px 8px}
+td{padding:12px 8px;border-bottom:1px solid #ddd;text-align:center}
+td:first-child,th:first-child{text-align:left}
+.total{background:#edf2ed;font-weight:bold}
+.summary{margin:0 15px 20px;background:#edf2ed;padding:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:bold}
+.note{padding:0 15px 20px;color:#777;font-size:12px;line-height:1.6}
+.print{display:block;margin:0 auto 24px;padding:14px 20px}
+footer{background:#09291e;color:white;text-align:center;padding:22px 12px;font-size:13px}
+@media(max-width:500px){.info{grid-template-columns:1fr;gap:17px}.search{padding:20px}}
+@media print{body{background:white}header,.search,footer,.print{display:none!important}main{margin:0;padding:0}.result{display:block!important;border:1px solid #c6a34b}.resulthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
 <header>
- <div>
-  <div class="logo">🎓 Manan<span>360.pk</span></div>
-  <small>Books, Notes &amp; Quality Questions</small>
- </div>
- <button class="btn secondary" id="logoutTop" onclick="logout()" hidden>Sign Out</button>
+<div class="logo">✦</div>
+<h1>Government Elementary School<br>Chak Number 104 ML</h1>
+<p>FIRST TERM EXAMINATION<br>STUDENT RESULT PORTAL</p>
 </header>
 
-<div class="wrap">
-
-<!-- LOGIN -->
-<section id="auth" class="page active">
- <div class="row">
-  <div class="card">
-   <h1>Welcome Back!</h1>
-   <p class="muted">Login to your Manan360.pk account.</p>
-   <form id="loginForm">
-    <label>Email or Username</label>
-    <input id="loginId" required placeholder="Enter email or username">
-    <label>Password</label>
-    <input id="loginPass" required type="password" placeholder="Enter password">
-    <button class="btn full">Login</button>
-   </form>
-   <p class="muted">New here? Create an account on the right.</p>
-  </div>
-  <div class="card">
-   <h2>Create Account</h2>
-   <p class="muted">Join Manan360.pk and start learning today!</p>
-   <form id="signupForm">
-    <label>Full Name</label>
-    <input id="signupName" required placeholder="Your full name">
-    <label>Email Address</label>
-    <input id="signupEmail" required type="email" placeholder="you@example.com">
-    <label>Password</label>
-    <input id="signupPass" required type="password" minlength="6" placeholder="At least 6 characters">
-    <label>Select Your Role</label>
-    <select id="signupRole">
-     <option>General User</option><option>Student</option>
-    </select>
-    <button class="btn full">Create Account</button>
-   </form>
-   <p class="muted">For security, Employee, Admin and CEO accounts must be created or authorized by the site owner.</p>
-  </div>
- </div>
+<main>
+<section class="search">
+<h2>Search Your Result</h2>
+<p>Enter your roll number below.</p>
+<form id="form">
+<label for="roll">ROLL NUMBER</label>
+<input id="roll" inputmode="numeric" maxlength="7" placeholder="Enter Roll Number" required>
+<button type="submit">SEARCH RESULT</button>
+</form>
+<div id="message"></div>
 </section>
 
-<!-- PORTAL -->
-<section id="portal" class="page">
- <div class="card">
-  <h1 id="welcome">Welcome!</h1>
-  <p class="muted" id="roleText">Your Manan360.pk dashboard</p>
-  <div class="navs" id="navigation"></div>
- </div>
-
-<section id="home" class="subpage">
- <div class="stats">
-  <div class="card"><div class="stat">Total Applications</div><div class="num blue" id="total">0</div></div>
-  <div class="card"><div class="stat">Pending</div><div class="num orange" id="pending">0</div></div>
-  <div class="card"><div class="stat">Approved</div><div class="num green" id="approved">0</div></div>
-  <div class="card"><div class="stat">Rejected</div><div class="num red" id="rejected">0</div></div>
- </div>
- <div class="card">
-  <h2>Quick Actions</h2>
-  <div class="actions">
-   <button class="action" onclick="show('apply')">📝 Apply Now<small>Submit an application</small></button>
-   <button class="action" onclick="show('quiz')">📚 Take Quiz<small>20 MCQs · 10 seconds each</small></button>
-   <button class="action" onclick="show('track')">🔎 Track Application<small>Check status using Track ID</small></button>
-   <button class="action" onclick="show('applications')">📋 My Applications<small>View your application history</small></button>
-  </div>
- </div>
-</section>
-
-<section id="apply" class="subpage hidden">
- <div class="card">
-  <h2>Application Form</h2>
-  <p class="muted">Complete your details carefully.</p>
-  <form id="applyForm">
-   <label>Full Name</label><input id="appName" required>
-   <label>Father Name</label><input id="fatherName" required>
-   <div class="row">
-    <div><label>Age</label><input id="age" type="number" min="1" max="100" required></div>
-    <div><label>Class</label><select id="className"><option>Class 9</option><option>Class 10</option><option>Other</option></select></div>
-   </div>
-   <label>Optional Proof Image</label><input id="proof" type="file" accept="image/*">
-   <button class="btn full">Submit Application</button>
-  </form>
-  <p class="muted">This starter page does not upload proof images to a server.</p>
- </div>
- <div id="submitted" class="card hidden"></div>
-</section>
-
-<section id="applications" class="subpage hidden">
- <div class="card">
-  <h2>My Applications</h2>
-  <div class="tablewrap"><table><thead><tr><th>Track ID</th><th>Name</th><th>Class</th><th>Status</th></tr></thead><tbody id="myRows"></tbody></table></div>
- </div>
-</section>
-
-<section id="track" class="subpage hidden">
- <div class="card">
-  <h2>Track Your Application</h2>
-  <label>Track ID or Applicant Name</label>
-  <input id="trackInput" placeholder="M360-0001">
-  <button class="btn" onclick="trackApplication()">Search Status</button>
-  <div id="trackOutput"></div>
- </div>
-</section>
-
-<section id="quiz" class="subpage hidden">
- <div class="card">
-  <h2>General Knowledge Quiz</h2>
-  <p class="muted">20 questions · 10 seconds per question · 18 correct answers required to unlock the application form.</p>
-  <div id="quizIntro">
-   <button class="btn" onclick="startQuiz()">Start Quiz</button>
-  </div>
-  <div id="quizArea" class="hidden">
-   <p>Question <b id="qNumber">1</b> of 20 <span class="timer" style="float:right">Time: <span id="time">10</span>s</span></p>
-   <div class="question" id="qText"></div>
-   <div id="qOptions"></div>
-   <button class="btn full" onclick="nextQuestion()">Next Question →</button>
-  </div>
-  <div id="quizResult" class="hidden"></div>
- </div>
-</section>
-
-<section id="decision" class="subpage hidden">
- <div class="card">
-  <h2>Approval &amp; Rejection</h2>
-  <p class="muted">Authorized Admin/CEO actions are displayed here. This demo does not provide secure role authorization.</p>
-  <div class="tablewrap"><table><thead><tr><th>Track ID</th><th>Name</th><th>Status</th><th>Action</th></tr></thead><tbody id="decisionRows"></tbody></table></div>
- </div>
-</section>
-
-<section id="support" class="subpage hidden">
- <div class="card">
-  <h2>Manan360 Support Team</h2>
-  <p class="muted">Keep your Track ID available when asking about an application.</p>
-  <p>Books, Notes &amp; Quality Questions</p>
- </div>
-</section>
-</section>
+<section class="result" id="result">
+<div class="resulthead">
+<h2>Government Elementary School<br>Chak Number 104 ML</h2>
+<p>FIRST TERM EXAMINATION<br>STUDENT RESULT CARD</p>
 </div>
-<footer>© Manan360.pk · Manan360 Support Team</footer>
+<div class="info">
+<div><small>ROLL NUMBER</small><strong id="rRoll"></strong></div>
+<div><small>STUDENT NAME</small><strong id="rName"></strong></div>
+<div><small>FATHER'S NAME</small><strong id="rFather"></strong></div>
+<div><small>CLASS</small><strong id="rClass"></strong></div>
+<div><small>EXAMINATION</small><strong>First Term</strong></div>
+<div><small>POSITION</small><strong id="rPosition"></strong></div>
+</div>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Subject</th><th>Total</th><th>Obtained</th><th>Percentage</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+<div class="summary">
+<span>TOTAL: <span id="rTotal"></span></span>
+<span>PERCENTAGE: <span id="rPercent"></span></span>
+</div>
+<div class="note">Please contact the school for any correction in this result.</div>
+<button class="print" onclick="window.print()">PRINT RESULT / SAVE PDF</button>
+</section>
+</main>
+<footer>© 2026 Government Elementary School, Chak Number 104 ML</footer>
 
 <script>
-/*
- IMPORTANT:
- This is a front-end starter/demo. Accounts and applications are stored
- only in this browser. It is NOT a secure login or a Google Sheets backend.
- Do not use client-side passwords for real Admin/CEO authorization.
- Connect these actions to your existing Apps Script before publishing.
-*/
-const $=id=>document.getElementById(id);
-let currentUser=null, currentPage='home', qIndex=0, correct=0, timeLeft=10, timer=null, answered=false;
-let accounts=JSON.parse(localStorage.getItem('m360_demo_accounts')||'[]');
-let applications=JSON.parse(localStorage.getItem('m360_demo_apps')||'[]');
-function save(){localStorage.setItem('m360_demo_accounts',JSON.stringify(accounts));localStorage.setItem('m360_demo_apps',JSON.stringify(applications))}
-function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function badge(s){return '<span class="badge '+safe(s)+'">'+safe(s)+'</span>'}
+const subjects=["Urdu","Islamiat","English","General Knowledge","Mathematics","Tarjamat-ul-Quran"];
 
-$('signupForm').addEventListener('submit',e=>{
- e.preventDefault();
- const name=$('signupName').value.trim(),email=$('signupEmail').value.trim().toLowerCase(),pass=$('signupPass').value,role=$('signupRole').value;
- if(accounts.some(a=>a.email===email)){alert('An account with this email already exists in this browser.');return}
- accounts.push({name,email,pass,role});save();
- alert('Account created in this browser demo. Please login.');
- $('signupForm').reset();
-});
-$('loginForm').addEventListener('submit',e=>{
- e.preventDefault();
- const id=$('loginId').value.trim().toLowerCase(),pass=$('loginPass').value;
- const a=accounts.find(x=>(x.email===id||x.name.toLowerCase()===id)&&x.pass===pass);
- if(!a){alert('Account not found in this browser demo. Create an account first.');return}
- currentUser=a;openPortal();
-});
-function openPortal(){
- $('auth').classList.remove('active');$('portal').classList.add('active');$('logoutTop').hidden=false;
- $('welcome').textContent='Welcome, '+currentUser.name+'!';
- $('roleText').textContent=currentUser.role+' Dashboard';
- buildNav();refresh();show('home');
-}
-function logout(){currentUser=null;$('portal').classList.remove('active');$('auth').classList.add('active');$('logoutTop').hidden=true}
-function buildNav(){
- const items=[['home','⌂ Home'],['apply','📝 Apply Now'],['applications','▤ My Applications'],['track','⌕ Track Application'],['quiz','▣ Take Quiz'],['decision','✓ Approval / Rejection'],['support','♡ Support']];
- $('navigation').innerHTML=items.map(([id,label])=>'<button class="nav" onclick="show(\''+id+'\')">'+label+'</button>').join('');
-}
-function show(id){
- currentPage=id;
- document.querySelectorAll('.subpage').forEach(x=>x.classList.add('hidden'));
- $(id).classList.remove('hidden');
- document.querySelectorAll('#navigation .nav').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick')===`show('${id}')`));
- if(id==='applications'||id==='decision')refresh();
-}
-function visibleApps(){return applications.filter(a=>a.email===currentUser?.email)}
-function refresh(){
- const list=currentUser?.role==='Admin'||currentUser?.role==='CEO'||currentUser?.role==='Employee'?applications:visibleApps();
- $('total').textContent=list.length;
- $('pending').textContent=list.filter(a=>a.status==='Pending'||a.status==='Forwarded').length;
- $('approved').textContent=list.filter(a=>a.status==='Approved').length;
- $('rejected').textContent=list.filter(a=>a.status==='Rejected').length;
- $('myRows').innerHTML=visibleApps().map(a=>`<tr><td>${safe(a.id)}</td><td>${safe(a.name)}</td><td>${safe(a.className)}</td><td>${badge(a.status)}</td></tr>`).join('')||'<tr><td colspan="4">No applications yet.</td></tr>';
- $('decisionRows').innerHTML=list.map(a=>`<tr><td>${safe(a.id)}</td><td>${safe(a.name)}</td><td>${badge(a.status)}</td><td><button class="btn secondary" onclick="changeStatus('${safe(a.id)}','Forwarded')">Forward</button> <button class="btn" onclick="changeStatus('${safe(a.id)}','Approved')">Approve</button> <button class="btn danger" onclick="changeStatus('${safe(a.id)}','Rejected')">Reject</button></td></tr>`).join('')||'<tr><td colspan="4">No applications yet.</td></tr>';
-}
-$('applyForm').addEventListener('submit',e=>{
- e.preventDefault();
- if(!currentUser){alert('Please login first.');return}
- if(!sessionStorage.getItem('m360_quiz_pass_'+currentUser.email)){alert('Please pass the 20-question quiz with at least 18 correct answers first.');show('quiz');return}
- const id='M360-'+String(Date.now()).slice(-6);
- const app={id,name:$('appName').value.trim(),father:$('fatherName').value.trim(),age:$('age').value,className:$('className').value,status:'Pending',email:currentUser.email,date:new Date().toLocaleDateString()};
- applications.push(app);save();refresh();
- $('submitted').classList.remove('hidden');
- $('submitted').innerHTML='<h2 class="green">✓ Application Submitted!</h2><p>Your Track ID is:</p><h2>'+safe(id)+'</h2><p class="muted">Save this ID to track your application.</p><p>Status: '+badge('Pending')+'</p>';
- $('applyForm').reset();
-});
-function trackApplication(){
- const q=$('trackInput').value.trim().toLowerCase();
- const a=applications.find(x=>x.id.toLowerCase()===q||x.name.toLowerCase()===q);
- $('trackOutput').innerHTML=a?`<div class="card"><h3>Application Status</h3><p><b>Track ID:</b> ${safe(a.id)}</p><p><b>Name:</b> ${safe(a.name)}</p><p><b>Class:</b> ${safe(a.className)}</p><p><b>Status:</b> ${badge(a.status)}</p><p class="muted">Submitted: ${safe(a.date)}</p></div>`:'<p class="muted">No matching application found in this browser demo.</p>';
-}
-function changeStatus(id,status){
- if(!['Admin','CEO','Employee'].includes(currentUser?.role)){alert('This demo action is for workflow preview only. Secure server-side role checks are required.');return}
- const a=applications.find(x=>x.id===id);if(!a)return;
- if(status==='Forwarded'&&currentUser.role!=='Admin'&&currentUser.role!=='Employee'){alert('Only Admin/Employee can forward in this demo.');return}
- if((status==='Approved'||status==='Rejected')&&currentUser.role!=='CEO'){alert('Final approval/rejection must be performed by the CEO.');return}
- a.status=status;save();refresh();alert('Demo status updated in this browser only.');
-}
-
-const questions=[
-['What is the capital of Pakistan?',['Lahore','Islamabad','Karachi','Quetta'],1],
-['What is 8 × 7?',['54','56','64','48'],1],
-['Which planet is known as the Red Planet?',['Venus','Jupiter','Mars','Mercury'],2],
-['How many days are in a leap year?',['365','364','366','360'],2],
-['Which is the largest ocean on Earth?',['Atlantic','Indian','Arctic','Pacific'],3],
-['Which gas do plants absorb for photosynthesis?',['Oxygen','Carbon dioxide','Hydrogen','Helium'],1],
-['What is the national language of Pakistan?',['Punjabi','Sindhi','Urdu','Pashto'],2],
-['How many sides does a hexagon have?',['Five','Six','Seven','Eight'],1],
-['Which organ pumps blood around the body?',['Lungs','Brain','Heart','Kidney'],2],
-['What is the opposite of “ancient”?',['Old','Modern','Historic','Past'],1],
-['Which is the smallest prime number?',['0','1','2','3'],2],
-['How many minutes are in one hour?',['30','50','60','100'],2],
-['Which of these is a mammal?',['Shark','Frog','Dolphin','Crocodile'],2],
-['What is the chemical formula of water?',['CO2','H2O','O2','NaCl'],1],
-['Which direction does the Sun generally rise from?',['North','South','East','West'],2],
-['What is 144 ÷ 12?',['10','11','12','14'],2],
-['Which continent is Pakistan in?',['Africa','Asia','Europe','Australia'],1],
-['Which device is used to type text on a computer?',['Monitor','Keyboard','Speaker','Printer'],1],
-['What is the plural of “child”?',['Childs','Childes','Children','Childrens'],2],
-['Which month comes after September?',['August','October','November','December'],1]
+/* Original marks transcribed from the provided result sheet.
+   Roll numbers below are examples generated for this website,
+   not official school-issued roll numbers. */
+const raw=[
+["Ali Shan",[35,40,35,32,35,15],""],
+["Ayan Ali",[49,40,43,41,50,20],"2nd Position"],
+["Maryam Atif",[40,40,43,42,50,18],"3rd Position"],
+["Muhammad Ahad",[50,48,40,45,50,20],"1st Position"],
+["Muhammad Ibrahim",[35,30,44,25,35,15],""],
+["Ashyal Fatima",[45,47,43,45,43,20],"2nd Position"],
+["Rehan Anwar",[40,41,40,44,45,20],"3rd Position"],
+["M Abu Bakkar",[40,40,40,37,45,15],""],
+["Abdullah",[43,35,30,43,45,15],""],
+["Ali Shahzad",[41,40,39,42,43,15],""],
+["Ayesha Faitma",[40,40,35,43,45,15],""],
+["Subhan",[40,30,40,30,45,15],""],
+["Muhammad Muneeb",[35,40,30,43,40,15],""],
+["Anaya",[40,40,38,25,35,15],""],
+["Asad",[40,40,40,28,40,15],""],
+["Ali Haider",[40,35,40,40,40,15],""],
+["Mohsin",[35,30,40,25,25,15],""],
+["Muhammad Ahmad",[30,30,40,35,30,15],""],
+["Rehman",[40,35,35,30,45,15],""],
+["Abu Bakkar",[48,47,46,46,46,20],"1st Position"],
+["Saim",[40,40,40,25,40,15],""],
+["Abdul Hadi",[35,30,35,34,30,15],""],
+["Saqlain",[30,25,30,25,35,15],""],
+["Tayyab",[35,25,"A","A",30,15],""],
+["Ali Hamza",["A",40,35,"A",30,15],""],
+["Muhmmad Ahmad",["A","A","A","A","A","A"],""],
+["Unavailable",["A","A","A","A","A","A"],""],
+["Unavailable",["A","A","A","A","A","A"],""],
+["Unavailable",["A","A","A","A","A","A"],""],
+["Unavailable",["A","A","A","A","A","A"],""]
 ];
-function startQuiz(){
- clearInterval(timer);qIndex=0;correct=0;
- $('quizIntro').classList.add('hidden');$('quizResult').classList.add('hidden');$('quizArea').classList.remove('hidden');
- renderQuestion();
+
+const students=raw.map((r,i)=>({
+roll:String(1254873+i*2719),
+name:r[0],
+marks:r[1],
+position:r[2]
+}));
+
+const $=id=>document.getElementById(id);
+$("form").addEventListener("submit",function(e){
+e.preventDefault();
+const roll=$("roll").value.trim();
+const s=students.find(x=>x.roll===roll);
+if(!s){
+$("result").style.display="none";
+$("message").textContent="Result not found. Please check your roll number.";
+return;
 }
-function renderQuestion(){
- answered=false;timeLeft=10;$('time').textContent=timeLeft;
- const q=questions[qIndex];$('qNumber').textContent=qIndex+1;$('qText').textContent=q[0];
- $('qOptions').innerHTML=q[1].map((x,i)=>`<label class="option"><input type="radio" name="answer" value="${i}"> ${safe(x)}</label>`).join('');
- clearInterval(timer);timer=setInterval(()=>{timeLeft--;$('time').textContent=timeLeft;if(timeLeft<=0){clearInterval(timer);nextQuestion()}},1000);
-}
-function nextQuestion(){
- if(answered)return;answered=true;clearInterval(timer);
- const picked=document.querySelector('input[name="answer"]:checked');
- if(picked&&Number(picked.value)===questions[qIndex][2])correct++;
- qIndex++;
- if(qIndex<questions.length)renderQuestion();else finishQuiz();
-}
-function finishQuiz(){
- $('quizArea').classList.add('hidden');$('quizResult').classList.remove('hidden');
- const passed=correct>=18;
- if(passed&&currentUser)sessionStorage.setItem('m360_quiz_pass_'+currentUser.email,'1');
- $('quizResult').innerHTML=`<h2>${passed?'🎉 Quiz Passed!':'Quiz Result'}</h2><p>Your Score: <b>${correct}/20</b></p><p>Correct Answers: ${correct}</p><p>Incorrect or Unanswered: ${20-correct}</p><div class="card"><h3 class="${passed?'green':'red'}">${passed?'You have qualified to apply.':'You need at least 18 correct answers to apply.'}</h3><p class="muted">${passed?'You can now open the Application Form.':'Review your subjects and try the quiz again.'}</p>${passed?'<button class="btn" onclick="show(\\'apply\\')">Apply Now</button>':'<button class="btn" onclick="startQuiz()">Try Again</button>'}</div>`;
-}
+$("message").textContent="";
+$("rRoll").textContent=s.roll;
+$("rName").textContent=s.name;
+$("rFather").textContent="Not provided";
+$("rClass").textContent="Not provided";
+$("rPosition").textContent=s.position||"Not assigned";
+
+let total=0,obtained=0;
+$("rows").innerHTML=s.marks.map((m,i)=>{
+const absent=m==="A";
+const max=i===5?25:50;
+total+=max;
+if(!absent)obtained+=Number(m);
+return `<tr><td>${subjects[i]}</td><td>${max}</td><td>${absent?"A":m}</td><td>${absent?"—":(Number(m)/max*100).toFixed(2)+"%"}</td></tr>`;
+}).join("");
+$("rTotal").textContent=obtained+" / "+total;
+$("rPercent").textContent=(obtained/total*100).toFixed(2)+"%";
+$("result").style.display="block";
+$("result").scrollIntoView({behavior:"smooth"});
+});
 </script>
 </body>
-</html>
+</html/>
