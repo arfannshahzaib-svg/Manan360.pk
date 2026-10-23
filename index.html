@@ -1,15 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>School Result Portal</title>
+<title>Govt. Elementary School 104 ML - Results</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f3f1e8;color:#173d2f}
 header{background:#0d3527;color:white;text-align:center;padding:30px 15px;border-bottom:5px solid #c6a34b}
-.logo{width:65px;height:65px;border:2px solid #c6a34b;border-radius:50%;margin:auto auto 15px;display:grid;place-items:center;background:white;color:#0d3527;font-size:27px}
+.logo{width:65px;height:65px;border:2px solid #c6a34b;border-radius:50%;margin:0 auto 15px;display:grid;place-items:center;background:white;color:#0d3527;font-size:27px}
 h1{font-family:Georgia,serif;font-size:clamp(24px,5vw,36px);font-weight:normal;line-height:1.3;margin:0 0 12px}
 header p{color:#e5ca78;letter-spacing:2px;font-size:13px;line-height:1.7}
 main{max-width:850px;margin:28px auto;padding:0 14px}
@@ -17,7 +17,7 @@ main{max-width:850px;margin:28px auto;padding:0 14px}
 .search{padding:25px}
 h2{font-family:Georgia,serif;font-weight:normal}
 label{display:block;font-size:13px;letter-spacing:3px;margin:20px 0 10px}
-input{width:100%;padding:17px;border:2px solid #c6a34b;border-radius:9px;font-size:23px;text-align:center;letter-spacing:3px}
+input{width:100%;padding:17px;border:2px solid #c6a34b;border-radius:9px;font-size:20px;text-align:center}
 button{background:#174b37;color:white;border:0;border-radius:8px;padding:16px;font-weight:bold;font-size:16px;cursor:pointer}
 .search button{width:100%;margin-top:14px}
 #message{color:#a33b36;font-weight:bold;margin-top:15px}
@@ -38,10 +38,20 @@ td:first-child,th:first-child{text-align:left}
 .note{padding:0 15px 20px;color:#777;font-size:12px;line-height:1.6}
 .print{display:block;margin:0 auto 24px;padding:14px 20px}
 footer{background:#09291e;color:white;text-align:center;padding:22px 12px;font-size:13px}
-@media(max-width:500px){.info{grid-template-columns:1fr;gap:17px}.search{padding:20px}}
-@media print{body{background:white}header,.search,footer,.print{display:none!important}main{margin:0;padding:0}.result{display:block!important;border:1px solid #c6a34b}.resulthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:500px){
+.info{grid-template-columns:1fr;gap:17px}
+.search{padding:20px}
+}
+@media print{
+body{background:white}
+header,.search,footer,.print{display:none!important}
+main{margin:0;padding:0}
+.result{display:block!important;border:1px solid #c6a34b}
+.resulthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 </style>
 </head>
+
 <body>
 <header>
 <div class="logo">✦</div>
@@ -55,7 +65,8 @@ footer{background:#09291e;color:white;text-align:center;padding:22px 12px;font-s
 <p>Enter your roll number below.</p>
 <form id="form">
 <label for="roll">ROLL NUMBER</label>
-<input id="roll" inputmode="numeric" maxlength="7" placeholder="Enter Roll Number" required>
+<input id="roll" inputmode="numeric" maxlength="7"
+placeholder="Enter Roll Number" required>
 <button type="submit">SEARCH RESULT</button>
 </form>
 <div id="message"></div>
@@ -66,36 +77,50 @@ footer{background:#09291e;color:white;text-align:center;padding:22px 12px;font-s
 <h2>Government Elementary School<br>Chak Number 104 ML</h2>
 <p>FIRST TERM EXAMINATION<br>STUDENT RESULT CARD</p>
 </div>
+
 <div class="info">
 <div><small>ROLL NUMBER</small><strong id="rRoll"></strong></div>
 <div><small>STUDENT NAME</small><strong id="rName"></strong></div>
 <div><small>FATHER'S NAME</small><strong id="rFather"></strong></div>
-<div><small>CLASS</small><strong id="rClass"></strong></div>
+<div><small>CLASS</small><strong>Class 2</strong></div>
 <div><small>EXAMINATION</small><strong>First Term</strong></div>
 <div><small>POSITION</small><strong id="rPosition"></strong></div>
 </div>
+
 <div class="tablewrap">
 <table>
-<thead><tr><th>Subject</th><th>Total</th><th>Obtained</th><th>Percentage</th></tr></thead>
+<thead>
+<tr>
+<th>Subject</th>
+<th>Total</th>
+<th>Obtained</th>
+<th>Percentage</th>
+</tr>
+</thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
+
 <div class="summary">
 <span>TOTAL: <span id="rTotal"></span></span>
 <span>PERCENTAGE: <span id="rPercent"></span></span>
 </div>
+
 <div class="note">Please contact the school for any correction in this result.</div>
 <button class="print" onclick="window.print()">PRINT RESULT / SAVE PDF</button>
 </section>
 </main>
+
 <footer>© 2026 Government Elementary School, Chak Number 104 ML</footer>
 
 <script>
-const subjects=["Urdu","Islamiat","English","General Knowledge","Mathematics","Tarjamat-ul-Quran"];
+const subjects=[
+"Urdu","Islamiat","English",
+"General Knowledge","Mathematics","Tarjamat-ul-Quran"
+];
 
-/* Original marks transcribed from the provided result sheet.
-   Roll numbers below are examples generated for this website,
-   not official school-issued roll numbers. */
+/* Roll numbers are generated for website demonstration.
+   Replace them with official school roll numbers when available. */
 const raw=[
 ["Ali Shan",[35,40,35,32,35,15],""],
 ["Ayan Ali",[49,40,43,41,50,20],"2nd Position"],
@@ -133,34 +158,46 @@ const students=raw.map((r,i)=>({
 roll:String(1254873+i*2719),
 name:r[0],
 marks:r[1],
-position:r[2]
+position:r[2],
+father:""
 }));
 
 const $=id=>document.getElementById(id);
+
 $("form").addEventListener("submit",function(e){
 e.preventDefault();
+
 const roll=$("roll").value.trim();
 const s=students.find(x=>x.roll===roll);
+
 if(!s){
 $("result").style.display="none";
 $("message").textContent="Result not found. Please check your roll number.";
 return;
 }
+
 $("message").textContent="";
 $("rRoll").textContent=s.roll;
 $("rName").textContent=s.name;
-$("rFather").textContent="Not provided";
-$("rClass").textContent="Not provided";
+$("rFather").textContent=s.father;
 $("rPosition").textContent=s.position||"Not assigned";
 
 let total=0,obtained=0;
+
 $("rows").innerHTML=s.marks.map((m,i)=>{
 const absent=m==="A";
 const max=i===5?25:50;
 total+=max;
 if(!absent)obtained+=Number(m);
-return `<tr><td>${subjects[i]}</td><td>${max}</td><td>${absent?"A":m}</td><td>${absent?"—":(Number(m)/max*100).toFixed(2)+"%"}</td></tr>`;
+
+return `<tr>
+<td>${subjects[i]}</td>
+<td>${max}</td>
+<td>${absent?"Absent":m}</td>
+<td>${absent?"—":(Number(m)/max*100).toFixed(2)+"%"}</td>
+</tr>`;
 }).join("");
+
 $("rTotal").textContent=obtained+" / "+total;
 $("rPercent").textContent=(obtained/total*100).toFixed(2)+"%";
 $("result").style.display="block";
@@ -168,4 +205,4 @@ $("result").scrollIntoView({behavior:"smooth"});
 });
 </script>
 </body>
-</html/>
+</html>
